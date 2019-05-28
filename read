@@ -1,0 +1,80 @@
+Start SQL
+PostgreSQL
+PostgreSQL is a fast, feature-rich, open-source database application. It is a scalable application that we can use for development and production apps. We will be using PostgreSQL for most of our web-apps.
+
+MacOS X
+Fortunately for MacOS X, we can use Postgres.app, which provides the database application and a command line interface (CLI) so we can interact with it. To install Postgres.app, download and follow the installation instructions from the website.
+
+Though the instructions say it is optional, it is highly recommended to configure your system $PATH so that you can use the command line tools. We will make extensive use of them in the course.
+
+Paste these commands into the terminal:
+
+sudo mkdir -p /etc/paths.d &&
+echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+After installation
+Close and reopen your terminal to gain access to the psql command. Let's try it out.
+
+# open the PostgreSQL CLI
+psql
+
+# you should be greeted with a prompt that looks like this
+psql (10.X)
+Type "help" for help.
+
+yourname=#
+
+# type '/q' to quit
+yourname=# \q
+NB: You do not need a graphical client for this course. We encourage you to use the CLI as it teaches you the hard way and is the most common way to interact with a database directly.
+
+SQLite
+SQLite is a small, lightweight database application that requires no configuration and stores the database as a stand-alone file. For this reason, we will be using SQLite for a few of our in-class projects.
+
+Install using the Brew package manager:
+
+brew install sqlite
+Again, verify that installation was successful by opening the SQLite CLI.
+
+# open SQLite CLI with this command
+sqlite3
+
+#  you should see this output
+# SQLite version 3.16.0 2016-11-04 19:09:39
+# Enter ".help" for usage hints.
+# Connected to a transient in-memory database.
+# Use ".open FILENAME" to reopen on a persistent database.
+
+# .q to quit
+sqlite> .q
+Rails
+Ruby on Rails will serve as our application framework for this course. Rails is a very full-featured, opinionated framework that provides all the tools we need to create a complete web-app. These include an ORM (Object Relational Mapper - essentially we can continue to use Object Oriented Programming with respect to resources in our database), routing, a development server, and a templating engine.
+
+Fortunately for us, Rails is available as a gem in the Ruby ecosystem. Let's install it.
+
+# install rails
+gem install rails
+
+# verify installation
+which rails # => /Users/username/.rbenv/shims/rails
+Phase 3: Frontend Development
+Node.js & NPM
+Node.js will be our local JavaScript engine. This is used to run JavaScript code and run associated node commands.
+
+Again, we want to use a version manager with Node to help us manage potential conflicts between versions and dependencies. In this case we will be using NVM (Node Version Manager) to install/manage Node.js.
+
+# download and run the official install script
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+
+# update your terminal config (you will now have access to the nvm command)
+source ~/.bashrc
+
+# install a stable version of node
+nvm install 10.13.0
+
+# set version 10.13.0 as default version
+nvm use 10.13.0
+
+# verify install/config
+which node # => /Users/username/.nvm/versions/node/v10.13.0/bin/node
+
+https://sqlbolt.com/lesson/select_queries_introduction
